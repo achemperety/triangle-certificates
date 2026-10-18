@@ -1,0 +1,45 @@
+
+================================================================================================
+2. Frontier A: quaternionic Q_8 encodings
+================================================================================================
+spherical roots (t^2+1, t^2+t+1, t^3-1 vanish on 2-spheres), max residual: 6.661338147750939e-16
+off-axis unit pure quaternions: min |axis product| over random samples: 0.3895244179476462
+  Q_8 points of Q_G for K3 :     48   2^n P(G,3) =     48
+  Q_8 points of Q_G for K4 :      0   2^n P(G,3) =      0
+  Q_8 points of Q_G for P4 :    384   2^n P(G,3) =    384
+  Q_8 points of Q_G for C5 :    960   2^n P(G,3) =    960
+  Clifford point (Thm 2.3): {'n': 4, 'matrix_size': 8, 'H_embedding': True, 'all_relations_vanish': True}
+  Clifford point (Thm 2.3): {'n': 5, 'matrix_size': 16, 'H_embedding': True, 'all_relations_vanish': True}
+  Clifford point (Thm 2.3): {'n': 6, 'matrix_size': 16, 'H_embedding': True, 'all_relations_vanish': True}
+  Peres witness (Prop 2.4): {'rays': 33, 'edges': 72, 'triangles': 16, '3-colourable': False, 'anticommute_on_edges': True, 'squares_negative_real': True}
+  Pauli transfer, local hypotheses (Thm 2.5): {'rho_is_quaternion_embedding': True, 'entries_of_rho(Q_v)_in_J_v': True, 'entries_of_rho(Q_uv)_in_J_uv': True, 'dim C[y]/J_v': 6, 'dim C[y,w]/J_uv': 24, 'psi(J_v) in J_01': True}
+
+================================================================================================
+3. Frontier B: octonions
+================================================================================================
+  octonion identities: {'max_assoc_generic': np.float64(76.1894332435391), 'max_assoc_scalar': np.float64(1.0299848437342137e-14), 'max_artin': np.float64(1.1524503768190868e-11), 'max_moufang': np.float64(7.502873729216785e-14), 'max_alternative': np.float64(2.2385796613961446e-14)}
+  ladder L_1: denominator degree    2 (= 2^{m+1}-2: True); octonionic coordinate degree bound (r=2, Delta=2): d >= 1
+  ladder L_2: denominator degree    6 (= 2^{m+1}-2: True); octonionic coordinate degree bound (r=2, Delta=2): d >= 1
+  ladder L_3: denominator degree   14 (= 2^{m+1}-2: True); octonionic coordinate degree bound (r=2, Delta=2): d >= 1
+  ladder L_4: denominator degree   30 (= 2^{m+1}-2: True); octonionic coordinate degree bound (r=2, Delta=2): d >= 1
+  ladder L_5: denominator degree   62 (= 2^{m+1}-2: True); octonionic coordinate degree bound (r=2, Delta=2): d >= 2
+  ladder L_6: denominator degree  126 (= 2^{m+1}-2: True); octonionic coordinate degree bound (r=2, Delta=2): d >= 4
+  ladder L_7: denominator degree  254 (= 2^{m+1}-2: True); octonionic coordinate degree bound (r=2, Delta=2): d >= 8
+  simulation cost: {'scalar_products_per_octonion_product': 64, 'additions': 56}
+
+================================================================================================
+4. Frontier C: quaternionic Gram matrices, SDP and SOS
+================================================================================================
+  unit r with Re r = -1/2 satisfies r^2+r+1 = 0 in O (max residual): 4.496917212498577e-16
+  re-projection: {'min_eig_complex_rep': np.float64(-1.460428902208359e-14), 'min_eig_real_part': np.float64(-5.123707303287468e-16), 'rank_of_Re(qq*)': 4}
+  quaternionic Hermitian square = real sum of four squares: True
+  binary icosahedral witness: {'order': 120, 'closed_under_product': True, 'edges': 1200, 'edge_ratio_is_cube_root': True, 'triangles': 400, 'triangle_components': 400, '3-colourable': False, 'real_Gram_rank': 4}
+  binary tetrahedral control: {'order': 24, 'edges': 96, '3-colourable': True}
+  KG(6,2) rigidity: {'perfect_matchings': 15, 'rank_of_matching_system': 10, 'rank_of_norm_forms': 15, 'unique_Gram_rank': 5, 'edges_at_-1/2': True, '3-colourable': False}
+  Root-3 dimension of Cay(2I,C3): {'dim_W': 8, 'coordinates_span_W': True, 'affine_family_dim': 1, "family_is_(1-t)I4+tI4'": True, 'root3_dimension': 4}
+  Root-3 dimension: {'graph': 'KG(6,2)', 'chi': 4, 'vertices': 15, 'triangles': 15, 'dim_W': 5, 'norm_form_rank': 15, 'dim_Sym2': 15, 'root3_dimension': 5}
+  Root-3 dimension: {'graph': 'KG(9,3)', 'chi': 5, 'vertices': 84, 'triangles': 280, 'dim_W': 8, 'norm_form_rank': 36, 'dim_Sym2': 36, 'root3_dimension': 8}
+  Root-3 dimension: {'graph': 'KG(12,4)', 'chi': 6, 'vertices': 495, 'triangles': 5775, 'dim_W': 11, 'norm_form_rank': 66, 'dim_Sym2': 66, 'root3_dimension': 11}
+  Albert algebra: {'H_3(O) Jordan defect': np.float64(5.684341886080802e-14), 'H_4(O) Jordan defect': np.float64(160.24985364998392)}
+
+Total 24.1s

@@ -1,0 +1,61 @@
+
+== Section 2: triangle components
+[PASS] Lemma 2.1: a+b+c = 0 in F_3 iff a=b=c or {a,b,c} = F_3
+[PASS] Theorem 2.2(a),(b): |Col(K)| in {0, 6} for every triangle component (random unions of triangles)  (123 components)
+[PASS] Theorem 2.2(c): propagation decides Col(K) != 0
+[PASS] Remark 2.3: T(p,q) is 3-colourable iff 3 | p and 3 | q (3 <= p, q <= 9); a single component
+[PASS] Theorem 2.4(a),(b): H_i = L or a hyperplane; inclusion-exclusion = brute force  (120 random graphs)
+[PASS] Theorem 2.4(c): for k <= 3 components, colourable iff every H_i != L
+[PASS] Proposition 2.6: the strip preserves 3-colourability; 3|E| triangles, 2|E| components of <= 2 triangles, every edge in 1 or 2 triangles
+
+== Section 3: Nullstellensatz certificates
+[PASS] Theorem 3.3: the degree-3 functional vanishes on every x_w q_e: K3
+[PASS] Theorem 3.3: the degree-3 functional vanishes on every x_w q_e: K4
+[PASS] Theorem 3.3: the degree-3 functional vanishes on every x_w q_e: W5
+[PASS] Theorem 3.3: the degree-3 functional vanishes on every x_w q_e: W7
+[PASS] Theorem 3.3: the degree-3 functional vanishes on every x_w q_e: Moser spindle
+[PASS] Theorem 3.3: the degree-3 functional vanishes on every x_w q_e: Grotzsch
+[PASS] Theorem 3.3: the degree-3 functional vanishes on every x_w q_e: T(4,4)
+[PASS] Theorem 3.3: the degree-3 functional vanishes on every x_w q_e: T(5,7)
+[PASS] Theorem 3.3: the degree-3 functional vanishes on every x_w q_e: T(3,6)
+[PASS] Lemma 3.4: 3(x_u+x_v+x_w) = (2x_w^2+x_vx_w)(q_uw-q_uv) + (2x_w^2+x_ux_w)q_vw in R
+[PASS] Lemma 3.4: I_K3 = <e1, e2, e3 - 1>: equal reduced lex Groebner bases  ([x_u + x_v + x_w, x_v**2 + x_v*x_w + x_w**2, x_w**3 - 1])
+[PASS] Theorem 3.5: K3: every triangle component colourable, no propagation certificate
+[PASS] Theorem 3.5: K4: explicit certificate 27 = sum beta_e q_e in R over Z (hence over every field of characteristic != 3), multipliers of degree <= 4, so NS <= 6
+[PASS] Theorem 3.5: W5: explicit certificate 27 = sum beta_e q_e in R over Z (hence over every field of characteristic != 3), multipliers of degree <= 4, so NS <= 6
+[PASS] Theorem 3.5: W7: explicit certificate 27 = sum beta_e q_e in R over Z (hence over every field of characteristic != 3), multipliers of degree <= 4, so NS <= 6
+[PASS] Theorem 3.5: Moser spindle: every triangle component colourable, no propagation certificate
+[PASS] Theorem 3.5: Grotzsch: every triangle component colourable, no propagation certificate
+[PASS] Theorem 3.5: T(4,4): explicit certificate 27 = sum beta_e q_e in R over Z (hence over every field of characteristic != 3), multipliers of degree <= 4, so NS <= 6
+[PASS] Theorem 3.5: T(5,7): explicit certificate 27 = sum beta_e q_e in R over Z (hence over every field of characteristic != 3), multipliers of degree <= 4, so NS <= 6
+[PASS] Theorem 3.5: T(3,6): every triangle component colourable, no propagation certificate
+[PASS] Theorem 3.5: icosahedron: explicit certificate 27 = sum beta_e q_e in R over Z (hence over every field of characteristic != 3), multipliers of degree <= 4, so NS <= 6
+[PASS] Theorem 3.5: explicit certificates on random unions of triangles with a non-colourable component  (240 graphs)
+[PASS] Theorem 3.7: the strip map phi sends the generators of I_{G^nat} into I_G without raising degree
+[PASS] Table 1: NS_F2(K4) = 3  (3)
+[PASS] Table 1: NS_F2(W5) = 3  (3)
+[PASS] Table 1: NS_F2(Moser spindle) = 6  (6)
+[PASS] Table 1: NS_F2(Grotzsch) = 3  (3)
+[PASS] Table 1: NS_F2(W7) = 3  (3)
+[PASS] Table 1: NS_F2(icosahedron) = 3  (3)
+[PASS] Table 1: NS_F2(T(4,4)) = 6  (6)
+[PASS] Table 1: NS_F2(T(5,7)) = 6  (6)
+[PASS] Table 1: NS(K3 with target s_tau) = 4 (Lemma 3.4), by the grading the multipliers have grade 2
+
+== Section 7: strict vector colourings
+[PASS] Theorem 7.3 (k = 1): dim W = 3k-1 = 2; B -> (1_S^T B 1_S)_S injective; the standard colouring is strict  (3 k-sets, 1 partitions)
+[PASS] Theorem 7.3 (k = 2): dim W = 3k-1 = 5; B -> (1_S^T B 1_S)_S injective; the standard colouring is strict  (15 k-sets, 15 partitions)
+[PASS] Theorem 7.3 (k = 3): dim W = 3k-1 = 8; B -> (1_S^T B 1_S)_S injective; the standard colouring is strict  (84 k-sets, 280 partitions)
+[PASS] Theorem 7.3 (k = 4): dim W = 3k-1 = 11; B -> (1_S^T B 1_S)_S injective; the standard colouring is strict  (495 k-sets, 5775 partitions)
+[PASS] Theorem 7.4: 120 vertices, 1200 edges, 400 triangles, every edge in exactly one triangle
+[PASS] Theorem 7.4: not 3-colourable (exhaustive search with forward checking)
+[PASS] Theorem 7.4: dim W = 8, spanned by the coordinates of p -> (p, sigma(p))
+[PASS] Theorem 7.4: the norm system has rank 35 with kernel I4 + (-I4); the inclusion is a strict colouring  (6.1 s)
+
+== Reference programs (reference/earlier): re-run and compare with the stored logs
+[PASS] root3_collapse.py: output identical to root3_collapse.log (timings ignored)  (164 s)
+[PASS] hypercomplex_assault.py: output identical to hypercomplex_assault.log (timings ignored)  (22 s)
+[PASS] quantum_braid_assault.py: output identical to quantum_braid_assault.log (timings ignored)  (43 s)
+[PASS] quantum_nonlocality_assault.py: output identical to quantum_nonlocality_assault.log (timings ignored)  (29 s)
+
+0 failure(s); total time 271.1 s

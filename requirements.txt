@@ -1,0 +1,4 @@
+numpy>=1.24
+sympy>=1.12
+networkx>=2.8
+pytest>=7

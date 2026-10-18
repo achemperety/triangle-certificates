@@ -1,0 +1,245 @@
+quantum_braid_assault.py  --  Nonlocal Operator Fields, Anyonic Braids, Quantum Minimax Collapse
+================================================================================================
+PART A  operator Bayer fields
+
+--- A.1 free-algebra identities (exact over Q(omega))
+    q_uv = 3 sum w^{2c} P_uc P_vc (free algebra): True
+    sum_c P_c = 1 (free algebra): True
+    x^a = sum_c w^{ac} P_c, a=0,1,2 (free algebra): True
+    P_c P_c' = delta P_c mod x^3=1: True
+    P_uc q_uv = 3 w^{2c} P_uc P_vc mod x^3=1: True
+    reversed order q_vu identity: True
+
+--- A.2 random non-commuting order-3 unitaries (d=7)
+    identity error (non-commuting): 7.021666937153402e-16
+    projection error: 1.0296177963596958e-15
+    max |[X_u,X_v]|: 1.1259252808972167
+    edge relation on X_v=wX_u: 3.7878989011964013e-16
+    max |P_uc P_vc| there: 3.4403551000550515e-16
+
+--- A.3 three idempotents with sum lambda: (lambda, NC certificate degree, commutative degree)
+    ('-1', 5, 4)
+    ('0', None, None)
+    ('1/2', 5, 4)
+    ('1', None, None)
+    ('3/2', None, 4)
+    ('2', None, None)
+    ('5/2', 5, 4)
+    ('3', None, None)
+    ('4', 5, 4)
+    ('5', 5, 4)
+
+---     nonzero matrix points at the exceptional values
+    0: True
+    1: True
+    2: True
+    3: True
+    3/2: True
+
+---     ||[a,b]|| at lambda = 3/2
+    0.4330127018922193
+
+---     exact pattern for every lambda in F_p
+    p: 1009
+    exceptional set mod p: [0, 1, 2, 3, 506]
+    NC deg 4 infeasible for all lambda: True
+    NC deg 5 infeasible exactly at exceptional set: True
+    comm deg 3 infeasible for all lambda: True
+    comm deg 4 infeasible exactly at {0,1,2,3}: True
+
+--- A.4 K_4 certificates
+    lambda=4 certificate terms: 29
+    lifted certificate (relations of A(K_4)) equals 1: True
+    certificate degree in e: 5
+    C* (game algebra): sum(1-Q_c)^2 + 1 in I, degree 2: True
+    abelianized certificate valid: True
+    C* (Bayer, unitarity only): identity holds: True
+    C* (Bayer, unitarity only): degree: 4
+    lift of e_uc e_vc: degree of P_uc P_vc - w^{-2c}/3 P_uc q_uv: 4
+
+--- A.5 triangle rigidity and Vieta transport (W_5, K_4-free)
+    lambda=3: degree of a-1 in I (NC, comm): (4, 3)
+    triangle: Q_c - 1 in I(K_3) (explicit): True
+    triangle certificate degree in e: 4
+    W_5 certificate equals 1: True
+    W_5 certificate degree in e: 5
+    W_5 certificate terms: 4675
+
+PART B  anyonic braids and knots
+
+--- B.3 knot panel (V(t) from the Temperley-Lieb state sum; Arf and V(e^{2 pi i/3}) = 1 for the knots)
+    9 knots, 5 links
+    unknot               c=1  det=1   #Fox=3   all checks: True
+        V = 1
+    3_1 trefoil          c=1  det=3   #Fox=9   all checks: True
+        V = t +t^{3} -t^{4}
+    4_1 figure-eight     c=1  det=5   #Fox=3   all checks: True
+        V = t^{-2} -t^{-1} +1 -t +t^{2}
+    5_1                  c=1  det=5   #Fox=3   all checks: True
+        V = t^{2} +t^{4} -t^{5} +t^{6} -t^{7}
+    5_2                  c=1  det=7   #Fox=3   all checks: True
+        V = t -t^{2} +2t^{3} -t^{4} +t^{5} -t^{6}
+    6_1                  c=1  det=9   #Fox=9   all checks: True
+        V = t^{-2} -t^{-1} +2 -2t +t^{2} -t^{3} +t^{4}
+    8_19 = T(3,4)        c=1  det=3   #Fox=9   all checks: True
+        V = t^{3} +t^{5} -t^{8}
+    3_1 # 3_1 granny     c=1  det=9   #Fox=27  all checks: True
+        V = t^{2} +2t^{4} -2t^{5} +t^{6} -2t^{7} +t^{8}
+    3_1 # -3_1 square    c=1  det=9   #Fox=27  all checks: True
+        V = -t^{-3} +t^{-2} -t^{-1} +3 -t +t^{2} -t^{3}
+    Hopf link            c=2  det=2   #Fox=3   all checks: True
+        V = -t^{1/2} -t^{5/2}
+    T(2,4)               c=2  det=4   #Fox=3   all checks: True
+        V = -t^{3/2} -t^{7/2} +t^{9/2} -t^{11/2}
+    T(2,6)               c=2  det=6   #Fox=9   all checks: True
+        V = -t^{5/2} -t^{9/2} +t^{11/2} -t^{13/2} +t^{15/2} -t^{17/2}
+    Borromean rings      c=3  det=16  #Fox=3   all checks: True
+        V = -t^{-3} +3t^{-2} -2t^{-1} +4 -2t +3t^{2} -t^{3}
+    T(3,3)               c=3  det=4   #Fox=3   all checks: True
+        V = t^{2} +t^{4} +2t^{6}
+
+--- B.4 Fox = Vieta and the affine wall
+    solutions of a+b+c=0: 9
+    constants: 3
+    bijections: 6
+    a+b+c=0 <=> w^a w^b w^c = 1: True
+    Fox 2a=b+c <=> a+b+c=0: True
+    |!=| = 6 is not a power of 3: True
+    Mal'tsev x-y+z on (0,1),(1,0),(1,2): (0, 0)
+    result in '!=': False
+    braid boundary relations linear and fix constants: True
+
+--- B.5 Reidemeister I: (#Fox colourings, #trichromatic at every crossing)
+    trefoil sigma_1^3: (9, 6)
+    trefoil sigma_1^3 sigma_2 (kink): (9, 0)
+
+--- B.6 vertex-strand / edge-clasp encoding
+    K3: {'crossings': 8, 'linking matrix = adjacency': True, '#Fox': 3, '#proper': 6, '#proper & Fox': 0, 'constants are Fox': True, 'Lickorish-Millett': True}
+    P3: {'crossings': 4, 'linking matrix = adjacency': True, '#Fox': 3, '#proper': 12, '#proper & Fox': 0, 'constants are Fox': True, 'Lickorish-Millett': True}
+    C5: {'crossings': 16, 'linking matrix = adjacency': True, '#Fox': 3, '#proper': 30, '#proper & Fox': 0, 'constants are Fox': True, 'Lickorish-Millett': True}
+    K4: {'crossings': 20, 'linking matrix = adjacency': True, '#Fox': 27, '#proper': 0, '#proper & Fox': 0, 'constants are Fox': True, 'Lickorish-Millett': True}
+
+--- B.7 B_3 on the 2-dim Jones module
+    {'r': 1, 'projective image': 6, 'max conj |tr(s1 s2^-1)|': 1.0, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': False, 'non-trivial unipotent': False}
+    {'r': 2, 'projective image': '>3000', 'max conj |tr(s1 s2^-1)|': 3.0, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': True, 'non-trivial unipotent': False}
+    {'r': 3, 'projective image': '>3000', 'max conj |tr(s1 s2^-1)|': 2.0, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': False, 'non-trivial unipotent': True}
+    {'r': 4, 'projective image': 24, 'max conj |tr(s1 s2^-1)|': 1.0, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': False, 'non-trivial unipotent': False}
+    {'r': 5, 'projective image': '>3000', 'max conj |tr(s1 s2^-1)|': 2.618034, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': True, 'non-trivial unipotent': False}
+    {'r': 6, 'projective image': 12, 'max conj |tr(s1 s2^-1)|': 0.0, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': False, 'non-trivial unipotent': False}
+    {'r': 7, 'projective image': '>3000', 'max conj |tr(s1 s2^-1)|': 2.801938, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': True, 'non-trivial unipotent': False}
+    {'r': 8, 'projective image': '>3000', 'max conj |tr(s1 s2^-1)|': 2.414214, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': True, 'non-trivial unipotent': False}
+    {'r': 9, 'projective image': '>3000', 'max conj |tr(s1 s2^-1)|': 2.879385, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': True, 'non-trivial unipotent': False}
+    {'r': 10, 'projective image': 60, 'max conj |tr(s1 s2^-1)|': 1.618034, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': False, 'non-trivial unipotent': False}
+    {'r': 11, 'projective image': '>3000', 'max conj |tr(s1 s2^-1)|': 2.918986, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': True, 'non-trivial unipotent': False}
+    {'r': 12, 'projective image': '>3000', 'max conj |tr(s1 s2^-1)|': 2.732051, '= max|1-2cos(2 pi j/r)|': True, 'Kronecker certificate (>2)': True, 'non-trivial unipotent': False}
+
+---     Kronecker exceptional set r <= 1000
+    1
+    3
+    4
+    6
+    10
+
+--- B.8 B_4, B_5 standard modules
+    {'n': 4, 'defects': 2, 'r': 6, 'dim': 3, 'projective image': 216}
+    {'n': 4, 'defects': 0, 'r': 6, 'dim': 2, 'projective image': 12}
+    {'n': 4, 'defects': 0, 'r': 10, 'dim': 2, 'projective image': 60}
+    {'n': 5, 'defects': 1, 'r': 6, 'dim': 5, 'projective image': 25920}
+    {'n': 5, 'defects': 3, 'r': 6, 'dim': 4, 'projective image': 25920}
+    {'n': 4, 'defects': 2, 'r': 10, 'dim': 3, 'certificate word': [2, 2, -3, 1, 1, 3, 2, -3], 'max conj ratio': np.float64(4.040574), 'infinite': np.True_}
+    {'n': 5, 'defects': 1, 'r': 10, 'dim': 5, 'certificate word': [2, 1, 1, 2, 1, -3, 2], 'max conj ratio': np.float64(5.236068), 'infinite': np.True_}
+    {'n': 5, 'defects': 3, 'r': 10, 'dim': 4, 'certificate word': [-2, 3, 1], 'max conj ratio': np.float64(4.040574), 'infinite': np.True_}
+
+--- B.9 medial links of plane graphs
+    C3: {'|V|,|E|': (3, 3), 'planar coordinates': True, 'faces = |E|-|V|+2': True, 'Thistlethwaite <D>=A^(2V-2-E)T(-A^-4,-A^4)': True, 'P(G,3)': 6, 'T(-2,0) = (-1)^{V-1} P/3': True, 'FK sum = P(G,3)': True, 'loop form (d=sqrt3, a/b=-1/sqrt3) = P': True, 'topological point (d=sqrt3, a/b=e^{5pi i/6}) = <D>(t=e^{i pi/3})': True, '#Fox(L(G)) (arcs)': 9, '3^(1+corank3 L~)': 9, '|T(w^2,w)|^2 = 3^(r-rank3 L)': True, 'Lickorish-Millett 3|<D>(e^{i pi/3})|^2 = #Fox': True, 'components of L(G)': 1, '|T(-1,-1)| = 2^(c-1)': True}
+        <L(C3)> = A^{-7} -A^{-3} -A^{5}
+    C5: {'|V|,|E|': (5, 5), 'planar coordinates': True, 'faces = |E|-|V|+2': True, 'Thistlethwaite <D>=A^(2V-2-E)T(-A^-4,-A^4)': True, 'P(G,3)': 30, 'T(-2,0) = (-1)^{V-1} P/3': True, 'FK sum = P(G,3)': True, 'loop form (d=sqrt3, a/b=-1/sqrt3) = P': True, 'topological point (d=sqrt3, a/b=e^{5pi i/6}) = <D>(t=e^{i pi/3})': True, '#Fox(L(G)) (arcs)': 3, '3^(1+corank3 L~)': 3, '|T(w^2,w)|^2 = 3^(r-rank3 L)': True, 'Lickorish-Millett 3|<D>(e^{i pi/3})|^2 = #Fox': True, 'components of L(G)': 1, '|T(-1,-1)| = 2^(c-1)': True}
+        <L(C5)> = A^{-13} -A^{-9} +A^{-5} -A^{-1} -A^{7}
+    K4: {'|V|,|E|': (4, 6), 'planar coordinates': True, 'faces = |E|-|V|+2': True, 'Thistlethwaite <D>=A^(2V-2-E)T(-A^-4,-A^4)': True, 'P(G,3)': 0, 'T(-2,0) = (-1)^{V-1} P/3': True, 'FK sum = P(G,3)': True, 'loop form (d=sqrt3, a/b=-1/sqrt3) = P': True, 'topological point (d=sqrt3, a/b=e^{5pi i/6}) = <D>(t=e^{i pi/3})': True, '#Fox(L(G)) (arcs)': 3, '3^(1+corank3 L~)': 3, '|T(w^2,w)|^2 = 3^(r-rank3 L)': True, 'Lickorish-Millett 3|<D>(e^{i pi/3})|^2 = #Fox': True, 'components of L(G)': 3, '|T(-1,-1)| = 2^(c-1)': True}
+        <L(K4)> = -A^{-12} +3A^{-8} -2A^{-4} +4 -2A^{4} +3A^{8} -A^{12}
+    prism: {'|V|,|E|': (6, 9), 'planar coordinates': True, 'faces = |E|-|V|+2': True, 'Thistlethwaite <D>=A^(2V-2-E)T(-A^-4,-A^4)': True, 'P(G,3)': 12, 'T(-2,0) = (-1)^{V-1} P/3': True, 'FK sum = P(G,3)': True, 'loop form (d=sqrt3, a/b=-1/sqrt3) = P': True, 'topological point (d=sqrt3, a/b=e^{5pi i/6}) = <D>(t=e^{i pi/3})': True, '#Fox(L(G)) (arcs)': 9, '3^(1+corank3 L~)': 9, '|T(w^2,w)|^2 = 3^(r-rank3 L)': True, 'Lickorish-Millett 3|<D>(e^{i pi/3})|^2 = #Fox': True, 'components of L(G)': 1, '|T(-1,-1)| = 2^(c-1)': True}
+        <L(prism)> = -A^{-19} +4A^{-15} -8A^{-11} +11A^{-7} -13A^{-3} +13A -11A^{5} +8A^{9} -5A^{13} +A^{17}
+    bipyramid: {'|V|,|E|': (5, 9), 'planar coordinates': True, 'faces = |E|-|V|+2': True, 'Thistlethwaite <D>=A^(2V-2-E)T(-A^-4,-A^4)': True, 'P(G,3)': 0, 'T(-2,0) = (-1)^{V-1} P/3': True, 'FK sum = P(G,3)': True, 'loop form (d=sqrt3, a/b=-1/sqrt3) = P': True, 'topological point (d=sqrt3, a/b=e^{5pi i/6}) = <D>(t=e^{i pi/3})': True, '#Fox(L(G)) (arcs)': 9, '3^(1+corank3 L~)': 9, '|T(w^2,w)|^2 = 3^(r-rank3 L)': True, 'Lickorish-Millett 3|<D>(e^{i pi/3})|^2 = #Fox': True, 'components of L(G)': 1, '|T(-1,-1)| = 2^(c-1)': True}
+        <L(bipyramid)> = A^{-17} -5A^{-13} +8A^{-9} -11A^{-5} +13A^{-1} -13A^{3} +11A^{7} -8A^{11} +4A^{15} -A^{19}
+    W5: {'|V|,|E|': (6, 10), 'planar coordinates': True, 'faces = |E|-|V|+2': True, 'Thistlethwaite <D>=A^(2V-2-E)T(-A^-4,-A^4)': True, 'P(G,3)': 0, 'T(-2,0) = (-1)^{V-1} P/3': True, 'FK sum = P(G,3)': True, 'loop form (d=sqrt3, a/b=-1/sqrt3) = P': True, 'topological point (d=sqrt3, a/b=e^{5pi i/6}) = <D>(t=e^{i pi/3})': True, '#Fox(L(G)) (arcs)': 3, '3^(1+corank3 L~)': 3, '|T(w^2,w)|^2 = 3^(r-rank3 L)': True, 'Lickorish-Millett 3|<D>(e^{i pi/3})|^2 = #Fox': True, 'components of L(G)': 1, '|T(-1,-1)| = 2^(c-1)': True}
+        <L(W5)> = -A^{-20} +5A^{-16} -10A^{-12} +15A^{-8} -19A^{-4} +21 -19A^{4} +15A^{8} -10A^{12} +5A^{16} -A^{20}
+    W6: {'|V|,|E|': (7, 12), 'planar coordinates': True, 'faces = |E|-|V|+2': True, 'Thistlethwaite <D>=A^(2V-2-E)T(-A^-4,-A^4)': True, 'P(G,3)': 6, 'T(-2,0) = (-1)^{V-1} P/3': True, 'FK sum = P(G,3)': True, 'loop form (d=sqrt3, a/b=-1/sqrt3) = P': True, 'topological point (d=sqrt3, a/b=e^{5pi i/6}) = <D>(t=e^{i pi/3})': True, '#Fox(L(G)) (arcs)': 3, '3^(1+corank3 L~)': 3, '|T(w^2,w)|^2 = 3^(r-rank3 L)': True, 'Lickorish-Millett 3|<D>(e^{i pi/3})|^2 = #Fox': True, 'components of L(G)': 3, '|T(-1,-1)| = 2^(c-1)': True}
+        <L(W6)> = A^{-24} -6A^{-20} +15A^{-16} -26A^{-12} +39A^{-8} -47A^{-4} +52 -47A^{4} +39A^{8} -26A^{12} +15A^{16} -6A^{20} +A^{24}
+    H7: {'|V|,|E|': (7, 12), 'planar coordinates': True, 'faces = |E|-|V|+2': True, 'Thistlethwaite <D>=A^(2V-2-E)T(-A^-4,-A^4)': True, 'P(G,3)': 0, 'T(-2,0) = (-1)^{V-1} P/3': True, 'FK sum = P(G,3)': True, 'loop form (d=sqrt3, a/b=-1/sqrt3) = P': True, 'topological point (d=sqrt3, a/b=e^{5pi i/6}) = <D>(t=e^{i pi/3})': True, '#Fox(L(G)) (arcs)': 3, '3^(1+corank3 L~)': 3, '|T(w^2,w)|^2 = 3^(r-rank3 L)': True, 'Lickorish-Millett 3|<D>(e^{i pi/3})|^2 = #Fox': True, 'components of L(G)': 3, '|T(-1,-1)| = 2^(c-1)': True}
+        <L(H7)> = A^{-24} -6A^{-20} +15A^{-16} -26A^{-12} +39A^{-8} -47A^{-4} +52 -47A^{4} +39A^{8} -26A^{12} +15A^{16} -6A^{20} +A^{24}
+
+--- B.9' Gauss sum at (w^2, w), full complex value (planar or not)
+    K5: {'|E|': 10, 'k': 1, '|lhs - rhs|': 2.7465400791133423e-15, '|T|^2 = 3^(r-rank3 L)': True}
+    K33: {'|E|': 9, 'k': 1, '|lhs - rhs|': 4.5288390936029406e-15, '|T|^2 = 3^(r-rank3 L)': True}
+    Petersen: {'|E|': 15, 'k': 1, '|lhs - rhs|': 3.5741784143929416e-14, '|T|^2 = 3^(r-rank3 L)': True}
+    K4 + C5 (disconnected): {'|E|': 11, 'k': 2, '|lhs - rhs|': 3.992262406022446e-15, '|T|^2 = 3^(r-rank3 L)': True}
+    G(8,1/2) seed 1: {'|E|': 17, 'k': 1, '|lhs - rhs|': 8.262642668767605e-14, '|T|^2 = 3^(r-rank3 L)': True}
+    G(8,1/2) seed 2: {'|E|': 13, 'k': 1, '|lhs - rhs|': 6.6650378637527805e-15, '|T|^2 = 3^(r-rank3 L)': True}
+
+--- B.10 Jones blindness
+    W6: P(G,3): 6
+    H7: P(G,3): 0
+    T_W6(x,1/x) vs T_H7(x,1/x) (sign, shift): (1, 0)
+    <L(W6)> = unit * <L(H7)>: (1, 0)
+    Tutte polynomials differ: True
+    T_W6(x,1/x): x^{-6} +6x^{-5} +15x^{-4} +26x^{-3} +39x^{-2} +47x^{-1} +52 +47x +39x^{2} +26x^{3} +15x^{4} +6x^{5} +x^{6}
+    prism: P(G,3): 12
+    bipyramid: P(G,3): 0
+    <L(prism)>(A) = <L(bipyramid)>(A^-1): True
+    <L(prism)> amphichiral?: False
+
+--- B.10 exhaustive search (bridgeless connected planar graphs, <= 7 vertices)
+    graphs: 389
+    classes of T(x,1/x) up to units: 340
+    classes mixing 3-colourable and not: [[(7, 12, False, [(0, 4), (0, 5), (0, 6), (1, 2), (1, 3), (1, 6), (2, 3), (2, 6), (3, 5), (4, 5), (4, 6), (5, 6)]), (7, 12, True, [(0, 1), (0, 5), (0, 6), (1, 2), (1, 6), (2, 3), (2, 6), (3, 4), (3, 6), (4, 5), (4, 6), (5, 6)])]]
+
+PART C  quantum Hopf algebras
+
+--- C.1 U_q(sl_2), antipode, Temperley-Lieb commutant (max errors)
+    w, w' invariant: 5.921765209337976e-17
+    zig-zags = -1: 3.39346999964226e-17
+    K E K^-1 = q^2 E: 2.528414667217127e-16
+    K F K^-1 = q^-2 F: 4.440892098500626e-16
+    [E,F] = (K-K^-1)/(q-q^-1): 5.96099113529702e-16
+    dual module via S satisfies relations: 4.2017857086137114e-16
+    antipode axiom on generators: 2.280262482498473e-16
+    S^2(E) - K E K^-1: 0.0
+    S^2(E) - E (not involutive): 0.73117633345119
+    [e_i, U_q] on V^(x)n: 2.220446049250313e-16
+    TL relations: 3.1401849173675503e-16
+
+--- C.2 quantum trace with pivotal K vs Temperley-Lieb bracket (max error over panel)
+    A=0.738+0.220j: 7.32410687763558e-15
+    A=0.966-0.259j: 1.8381933366502447e-15
+    A=0.988-0.156j: 2.1816873162612464e-15
+
+--- C.3 Lusztig-Rosso rigidity: highest-weight multiplicities in V^(x)n
+    {'n': 2, 'classical': {2: 1, 0: 1}, 'generic q equal': True, 'q=1 equal': True, 'q=e^{i pi/3}': {2: 1, 0: np.int64(1)}, 'jump at root of unity': False}
+    {'n': 3, 'classical': {3: 1, 1: 2}, 'generic q equal': True, 'q=1 equal': True, 'q=e^{i pi/3}': {3: 1, 1: np.int64(2)}, 'jump at root of unity': False}
+    {'n': 4, 'classical': {4: 1, 2: 3, 0: 2}, 'generic q equal': True, 'q=1 equal': True, 'q=e^{i pi/3}': {4: 1, 2: np.int64(3), 0: np.int64(2)}, 'jump at root of unity': False}
+    {'n': 5, 'classical': {5: 1, 3: 4, 1: 5}, 'generic q equal': True, 'q=1 equal': True, 'q=e^{i pi/3}': {5: 1, 3: np.int64(4), 1: np.int64(5)}, 'jump at root of unity': False}
+    {'n': 6, 'classical': {6: 1, 4: 5, 2: 9, 0: 5}, 'generic q equal': True, 'q=1 equal': True, 'q=e^{i pi/3}': {6: 1, 4: np.int64(5), 2: np.int64(9), 0: np.int64(6)}, 'jump at root of unity': True}
+    {'n': 7, 'classical': {7: 1, 5: 6, 3: 14, 1: 14}, 'generic q equal': True, 'q=1 equal': True, 'q=e^{i pi/3}': {7: 1, 5: np.int64(6), 3: np.int64(14), 1: np.int64(15)}, 'jump at root of unity': True}
+
+--- C.4 S_3^+ = S_3
+    all 36 relabelled identities hold: True
+    certificate degree: 3
+    4x4 magic unitary valid: True
+    ||[u00,u22]|| (n=4): 0.4999999999999999
+
+---     spans of partition maps
+    {'k': 4, 'n': 3, '#P(k)': 15, '#NC(k)': 14, 'rank span P': np.int64(14), 'rank span NC': np.int64(14), '#partitions <= n blocks': 14, 'S_n^+ = S_n at level k': np.True_}
+    {'k': 4, 'n': 4, '#P(k)': 15, '#NC(k)': 14, 'rank span P': np.int64(15), 'rank span NC': np.int64(14), '#partitions <= n blocks': 15, 'S_n^+ = S_n at level k': np.False_}
+    {'k': 5, 'n': 3, '#P(k)': 52, '#NC(k)': 42, 'rank span P': np.int64(41), 'rank span NC': np.int64(41), '#partitions <= n blocks': 41, 'S_n^+ = S_n at level k': np.True_}
+    {'k': 5, 'n': 4, '#P(k)': 52, '#NC(k)': 42, 'rank span P': np.int64(51), 'rank span NC': np.int64(42), '#partitions <= n blocks': 51, 'S_n^+ = S_n at level k': np.False_}
+    {'k': 6, 'n': 3, '#P(k)': 203, '#NC(k)': 132, 'rank span P': np.int64(122), 'rank span NC': np.int64(122), '#partitions <= n blocks': 122, 'S_n^+ = S_n at level k': np.True_}
+    {'k': 6, 'n': 4, '#P(k)': 203, '#NC(k)': 132, 'rank span P': np.int64(187), 'rank span NC': np.int64(132), '#partitions <= n blocks': 187, 'S_n^+ = S_n at level k': np.False_}
+
+--- C.5 Kneser graphs
+    {'KG(n,k)': (5, 2), 'eigenvalues': [3, -2, 1], 'multiplicities': [1, 4, 5], 'theta(complement) = 1 - l_max/l_min': 2.5, 'n/k': 2.5, 'chi = n-2k+2 (Lovasz)': 3, 'numerical spectrum agrees': True}
+    {'KG(n,k)': (6, 2), 'eigenvalues': [6, -3, 1], 'multiplicities': [1, 5, 9], 'theta(complement) = 1 - l_max/l_min': 3.0, 'n/k': 3.0, 'chi = n-2k+2 (Lovasz)': 4, 'numerical spectrum agrees': True}
+    {'KG(n,k)': (9, 3), 'eigenvalues': [20, -10, 4, -1], 'multiplicities': [1, 8, 27, 48], 'theta(complement) = 1 - l_max/l_min': 3.0, 'n/k': 3.0, 'chi = n-2k+2 (Lovasz)': 5, 'numerical spectrum agrees': True}
+    {'KG(n,k)': (12, 4), 'eigenvalues': [70, -35, 15, -5, 1], 'multiplicities': [1, 11, 54, 154, 275], 'theta(complement) = 1 - l_max/l_min': 3.0, 'n/k': 3.0, 'chi = n-2k+2 (Lovasz)': 6, 'numerical spectrum agrees': None}
+    {'KG(n,k)': (15, 5), 'eigenvalues': [252, -126, 56, -21, 6, -1], 'multiplicities': [1, 14, 90, 350, 910, 1638], 'theta(complement) = 1 - l_max/l_min': 3.0, 'n/k': 3.0, 'chi = n-2k+2 (Lovasz)': 7, 'numerical spectrum agrees': None}
+
+Total time 48.3 s

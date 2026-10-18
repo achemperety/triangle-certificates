@@ -1,0 +1,121 @@
+
+====================================================================================================
+B. Root-3 encoding
+====================================================================================================
+Vieta lemma on Omega_3^3 (proper <=> e1=0 <=> (e1,e2,e3)=(0,0,1) <=> q's vanish): True
+I_{K3} = <e1, e2, e3 - 1> (reduced Groebner bases coincide): ('OK', True)
+  K3          Groebner OK      {'unit': False, 'points': 6, 'basis_size': 3}           P(G,3)=6    point check True
+  K4          Groebner OK      {'unit': True, 'points': 0}                             P(G,3)=0    point check True
+  C5          Groebner OK      {'unit': False, 'points': 30, 'basis_size': 7}          P(G,3)=30   point check True
+  Octahedron  Groebner OK      {'unit': False, 'points': 6, 'basis_size': 6}           P(G,3)=6    point check True
+  W5          Groebner OK      {'unit': True, 'points': 0}                             P(G,3)=0    point check True
+  Moser       Groebner OK      {'unit': True, 'points': 0}                             P(G,3)=0    point check True
+
+====================================================================================================
+C. Triangle propagation, holonomy in Sym(Omega_3) = D3, GF(3) collapse
+====================================================================================================
+  K4            chi<=3: False components 1  [4 tri: hol S3 = D3, pinches 0, F3-dim 1, colourable False]
+  Octahedron    chi<=3: True  components 1  [8 tri: hol 1, pinches 0, F3-dim 2, colourable True]
+  Icosahedron   chi<=3: False components 1  [20 tri: hol S3 = D3, pinches 0, F3-dim 1, colourable False]
+  W5            chi<=3: False components 1  [5 tri: hol C2 (reflection), pinches 0, F3-dim 1, colourable False]
+  W6            chi<=3: True  components 1  [6 tri: hol 1, pinches 0, F3-dim 2, colourable True]
+  T(4,4)        chi<=3: False components 1  [32 tri: hol C3 = mu_3 (rotations x -> w x), pinches 0, F3-dim 1, colourable False]
+  T(6,6)        chi<=3: True  components 1  [72 tri: hol 1, pinches 0, F3-dim 2, colourable True]
+  T(4,6)        chi<=3: False components 1  [48 tri: hol C3 = mu_3 (rotations x -> w x), pinches 0, F3-dim 1, colourable False]
+  T(6,9)        chi<=3: True  components 1  [108 tri: hol 1, pinches 0, F3-dim 2, colourable True]
+  Moser         chi<=3: False components 2  [2 tri: hol 1, pinches 0, F3-dim 2, colourable True] [2 tri: hol 1, pinches 0, F3-dim 2, colourable True]
+  Random triangle-saturated graphs: holonomy+pinch test == propagation in 300/300; inclusion-exclusion count == brute force (and k<=3 covering decision) in 300/300
+  G^nat for K4         n=28   components k=12   all holonomy trivial: True; chi<=3 preserved: True
+  G^nat for C5         n=25   components k=10   all holonomy trivial: True; chi<=3 preserved: True
+  G^nat for Groetzsch  n=91   components k=40   all holonomy trivial: True; chi<=3 preserved: True
+  G^nat for KG(5,2)    n=70   components k=30   all holonomy trivial: True; chi<=3 preserved: True
+
+====================================================================================================
+D. Nullstellensatz degrees (exact over Q: certificate at d*, design at d*-1; and over GF(2))
+====================================================================================================
+  D0 = deg of s=x0+x1+x2 in I_K3 over Q: 4 certificate verified: True design at None verified: False
+  D0 over GF(2): 4 True False
+  universal degree-3 design (=> NS >= 6 when char != 2,3) annihilates all degree-3 columns: {'K4': True, 'W5': True, 'Moser': True, 'Groetzsch': True, 'KG(5,2)': True}
+  NS_Q(K4) = 6  [certificate verified True, design at d*-3 verified True, 138 columns, 0.0s]
+  NS_GF(2)(K4) = 3  [certificate verified True, design at d*-3 verified False, 24 columns, 0.0s]
+  NS_Q(W5) = 6  [certificate verified True, design at d*-3 verified True, 960 columns, 0.7s]
+  NS_GF(2)(W5) = 3  [certificate verified True, design at d*-3 verified False, 60 columns, 0.0s]
+  NS_Q(Moser) = 6  [certificate verified True, design at d*-3 verified True, 1848 columns, 6.3s]
+  NS_GF(2)(Moser) = 6  [certificate verified True, design at d*-3 verified True, 1848 columns, 1.5s]
+  Groetzsch (triangle-free) over GF(2): d=3 -> {'degree<=d': True, 'columns': 220, 'rank': 190}
+  Groetzsch over Q: d=3 -> {'rows': 236, 'rank_mod_p': 190, 'corank': 46, 'kernel_verified': True, 'one_in_span_over_Q': False, 'primes': 1}
+  Groetzsch over Q: d=6 -> {'rows': 5193, 'rank_mod_p': 5192, 'corank': 1, 'kernel_verified': True, 'one_in_span_over_Q': True, 'primes': 1}
+  propagating regime K4              n=4   field Q   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  propagating regime K4              n=4   field 2   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  propagating regime K4              n=4   field 7   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  propagating regime W5              n=6   field Q   certificate degree 6 <= D0+2=6 verified True (relation (1, 2), 5 triangles)
+  propagating regime W5              n=6   field 2   certificate degree 6 <= D0+2=6 verified True (relation (1, 2), 5 triangles)
+  propagating regime W5              n=6   field 7   certificate degree 6 <= D0+2=6 verified True (relation (1, 2), 5 triangles)
+  propagating regime W7              n=8   field Q   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 7 triangles)
+  propagating regime W7              n=8   field 2   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 7 triangles)
+  propagating regime W7              n=8   field 7   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 7 triangles)
+  propagating regime Icosahedron     n=12  field Q   certificate degree 6 <= D0+2=6 verified True (relation (1, 2), 5 triangles)
+  propagating regime Icosahedron     n=12  field 2   certificate degree 6 <= D0+2=6 verified True (relation (1, 2), 5 triangles)
+  propagating regime Icosahedron     n=12  field 7   certificate degree 6 <= D0+2=6 verified True (relation (1, 2), 5 triangles)
+  propagating regime T(4,4)          n=16  field Q   certificate degree 6 <= D0+2=6 verified True (relation (1, 2), 5 triangles)
+  propagating regime T(4,4)          n=16  field 2   certificate degree 6 <= D0+2=6 verified True (relation (1, 2), 5 triangles)
+  propagating regime T(4,4)          n=16  field 7   certificate degree 6 <= D0+2=6 verified True (relation (1, 2), 5 triangles)
+  propagating regime T(5,7)          n=35  field Q   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 7 triangles)
+  propagating regime T(5,7)          n=35  field 2   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 7 triangles)
+  propagating regime T(5,7)          n=35  field 7   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 7 triangles)
+  propagating regime rand_tri(24,70) n=24  field Q   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  propagating regime rand_tri(24,70) n=24  field 2   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  propagating regime rand_tri(24,70) n=24  field 7   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  propagating regime rand_tri(24,70) n=24  field Q   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  propagating regime rand_tri(24,70) n=24  field 2   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  propagating regime rand_tri(24,70) n=24  field 7   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  propagating regime rand_tri(24,70) n=24  field Q   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  propagating regime rand_tri(24,70) n=24  field 2   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  propagating regime rand_tri(24,70) n=24  field 7   certificate degree 6 <= D0+2=6 verified True (relation (-1, -2), 3 triangles)
+  random triangle-saturated graphs, n=30 (regime census): {('not 3-colourable', 'conflicting component'): 154, ('not 3-colourable', 'no conflicting component'): 13, ('3-colourable', 'no conflicting component'): 33}
+  gadget substitution phi maps I_{G^nat} into I_G without raising degree (K4): True
+  gadget substitution phi maps I_{G^nat} into I_G without raising degree (C5): True
+  gadget substitution phi maps I_{G^nat} into I_G without raising degree (Moser): True
+
+====================================================================================================
+E. Rank-2 Gram matrices; Kneser witnesses for the rank relaxation
+====================================================================================================
+  rank-2 Gram of a colouring of the octahedron: True
+   {'graph': 'KG(6,2)', 'n': 15, 'gram_ok': True, 'rank': 5, '3-colourable': False}
+   {'graph': 'KG(9,3)', 'n': 84, 'gram_ok': True, 'rank': 8, '3-colourable': False}
+
+====================================================================================================
+F. Directed vertex geography: game recursion and complex potentials on colouring widgets
+====================================================================================================
+  symmetric widget K3          resolvent outcome theorem True; matching potential (U=G, a=z) True
+  symmetric widget K4          resolvent outcome theorem True; matching potential (U=G, a=z) True
+  symmetric widget Octahedron  resolvent outcome theorem True; matching potential (U=G, a=z) True
+  symmetric widget W5          resolvent outcome theorem True; matching potential (U=G, a=z) True
+  symmetric widget Moser       resolvent outcome theorem True; matching potential (U=G, a=z) True
+  symmetric widget bowtie_u    resolvent outcome theorem True; matching potential (U=G, a=z) True
+  C3           SCC-symmetric False outcome thm True  back-arc violation False set potential True
+  C3+1K1       SCC-symmetric False outcome thm True  back-arc violation False set potential True
+  C3+4K1       SCC-symmetric False outcome thm True  back-arc violation False set potential True
+  bowtie       SCC-symmetric False outcome thm True  back-arc violation False set potential False
+  B2+0sink     SCC-symmetric False outcome thm True  back-arc violation False set potential False
+  B2+1sink     SCC-symmetric False outcome thm True  back-arc violation False set potential True
+  rescued triangle (Thm 11.3) identities modulo t^3-3t-z: True
+  D3 (Thm 11.6) every identity exact via e_j: True   Y_3 = (y**4*z**2 - 2*y**4 - y**3*z**3 + 2*y**3*z - 3*y**2*z**2 + 3*y**2 - 6*y*z - 6)/(z**2 - 2)
+  Groebner/Rabinowitsch saturation over Q(z) (time-limited):
+    C3, U=[]: {'status': 'NO POTENTIAL (saturated ideal is the unit ideal)'}
+    C3, U=[(0, 1), (1, 2), (0, 2)]: {'status': 'NO POTENTIAL (saturated ideal is the unit ideal)'}
+    D3, U=K_{3,4}, cycle weights fixed 0 (extract eliminant): {'status': 'POTENTIAL EXISTS over the algebraic closure (proper saturated ideal)', 'basis_size': 5, 'eliminant_degree': 4, 'eliminant': 'a6**4 - a6**3*z + a6**2*(3 - 3*z**2)/(z**2 - 2) - 6*a6*z/(z**2 - 2) - 6/(z**2 - 2)'}
+    frozen C3 with one frozen vertex, U = all edges to it: {'status': 'NO POTENTIAL (saturated ideal is the unit ideal)'}
+    C3+K1, all 64 graphs U, z specialised to 7/3: {'NO POTENTIAL': 64}
+  random triangle widgets (SCC-sym, back-arc ok, set potential, outcome thm) -> count: {(False, False, False, True): 55, (False, True, False, True): 12, (False, True, True, True): 13}
+
+====================================================================================================
+G. Monodromy ladder of the triangle rescues
+====================================================================================================
+  sextic of Prop 11.2 = Res_t(t^3-3t-z, (t^2-1)x^2-2tx+2) up to constant: 1
+  prod_k (2 - t_k^2) = Res_t(t^3-3t-z, 2-t^2) = 2 - z**2
+   {'z0': 3, 'chebyshev': (6, 'S3TransitiveSubgroups.S3'), 'sextic': (48, 'S6TransitiveSubgroups.S4xC2'), 'Y3': (24, 'S4TransitiveSubgroups.S4')}
+   {'z0': 5, 'chebyshev': (6, 'S3TransitiveSubgroups.S3'), 'sextic': (48, 'S6TransitiveSubgroups.S4xC2'), 'Y3': (24, 'S4TransitiveSubgroups.S4')}
+   {'z0': 7, 'chebyshev': (6, 'S3TransitiveSubgroups.S3'), 'sextic': (48, 'S6TransitiveSubgroups.S4xC2'), 'Y3': (24, 'S4TransitiveSubgroups.S4')}
+
+Total time 194.0s
